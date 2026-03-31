@@ -1,0 +1,141 @@
+---
+title: Changelog
+description: Track the evolution of Konstantinos K with detailed release notes on new features, improvements, and bug fixes.
+---
+
+## Release History
+
+Stay updated with the latest improvements to Konstantinos K. You receive automatic notifications for major releases through your dashboard. Review changes below to understand new capabilities and required updates.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for documentation pages, enabling multiple users to edit simultaneously.
+- Introduced version history with diff viewer to compare changes over time.
+
+## Improvements
+
+- Enhanced search performance by `{30%}` for large documentation sites.
+- Optimized mobile responsiveness for better editing experience on tablets.
+
+## Bug Fixes
+
+- Fixed markdown rendering issues with nested lists and code blocks.
+- Resolved authentication token refresh errors during long sessions.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated AI-powered content suggestions for faster documentation creation.
+- Added custom themes with support for brand colors like `#3B82F6`.
+
+## Improvements
+
+- Streamlined export options to PDF, HTML, and Markdown formats.
+
+## Bug Fixes
+
+- Corrected sidebar navigation glitches on project switching.
+- Patched vulnerability in webhook endpoints (security improvement).
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Updated API authentication from `basic-auth` to `Bearer` tokens. Migrate by replacing `Authorization: Basic {credentials}` with `Authorization: Bearer {YOUR_TOKEN}`.
+
+## New Features
+
+- Core documentation editor with live preview.
+- Project organization with folders and permissions.
+
+## Initial Setup
+
+Run the following to upgrade:
+
+<CodeGroup tabs="npm,yarn">
+````bash
+npm install konstantinos-k@latest
+````
+
+````bash
+yarn add konstantinos-k@latest
+````
+</CodeGroup>
+
+</Update>
+
+## Migration Guide
+
+For v1.0.0 breaking changes, follow these steps to update your authentication setup.
+
+<Steps>
+  <Step title="Update Tokens" icon="key">
+
+Generate a new Bearer token from your dashboard at `https://dashboard.example.com/tokens`.
+
+  </Step>
+  <Step title="Replace Headers" icon="code">
+
+Update your API calls:
+
+````javascript
+// Old
+fetch('https://api.example.com/docs', {
+  headers: { 'Authorization': 'Basic ' + btoa('user:pass') }
+});
+
+// New
+fetch('https://api.example.com/docs', {
+  headers: { 'Authorization': `Bearer ${YOUR_TOKEN}` }
+});
+````
+
+  </Step>
+  <Step title="Test Integration" icon="check-circle">
+
+Verify endpoints respond with `{200 OK}` status.
+
+  </Step>
+</Steps>
+
+<Expandable title="Advanced Migration for Custom Integrations" default-open="false">
+
+If you use webhooks, update the payload schema:
+
+```json
+{
+  "event": "doc.updated",
+  "data": {
+    "id": "doc-123",
+    "title": "Updated Doc"
+  }
+}
+```
+
+Ensure your endpoint at `https://your-webhook-url.com/webhook` handles the new `{schema_version: "2.0"}` field.
+
+</Expandable>
+
+## Upcoming Features
+
+Preview what's coming next to Konstantinos K.
+
+<Columns cols={2}>
+  <Card title="API Rate Limiting" icon="zap" href="/api-reference">
+    Control usage with customizable quotas per project.
+  </Card>
+  <Card title="Analytics Dashboard" icon="bar-chart" href="/guides/analytics">
+    Track documentation views and engagement metrics.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Subscribe to updates via `https://dashboard.example.com/notifications` to get early access and beta features.
+</Callout>

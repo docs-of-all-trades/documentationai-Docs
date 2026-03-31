@@ -1,0 +1,145 @@
+---
+title: Quickstart Guide
+description: Get up and running with Konstantinos K by setting up your account and creating your first documentation space in just a few minutes.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- A modern web browser like Chrome, Firefox, or Safari
+- A valid email address for account verification
+- Optional: An existing account on GitHub for integration (advanced feature)
+
+<Callout kind="info">
+  No credit card or payment information is required to start. You can create unlimited documentation spaces on the free tier.
+</Callout>
+
+## Sign Up for Konstantinos K
+
+Follow these steps to create your account quickly.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Open your browser and navigate to `https://dashboard.example.com`.
+
+    Click the **Sign Up** button in the top right corner.
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email address, full name, and a secure password.
+
+    Click **Create Account**.
+  </Step>
+  <Step title="Verify Your Email" icon="mail">
+    Check your inbox for a verification email from Konstantinos K.
+
+    Click the verification link to activate your account.
+  </Step>
+</Steps>
+
+## Create Your First Documentation Space
+
+A documentation space organizes your project docs. Set one up now.
+
+<Steps>
+  <Step title="Access Spaces" icon="folder">
+    Log in to `https://dashboard.example.com`.
+
+    Click **New Space** from the dashboard.
+  </Step>
+  <Step title="Configure Space" icon="settings">
+    Enter a name like `My Project Docs`.
+
+    Choose visibility: Public, Private, or Team.
+
+    Select **Create Space**.
+  </Step>
+</Steps>
+
+## Add and Edit Your First Document
+
+Populate your space with content using the built-in editor.
+
+<Tabs>
+  <Tab title="Visual Editor" icon="edit-3">
+    <Steps>
+      <Step title="Create Document">
+        In your space, click **New Document**.
+
+        Name it `Introduction.mdx`.
+      </Step>
+      <Step title="Edit Content">
+        Use the WYSIWYG editor to add headings, lists, and images.
+
+        Preview changes in real-time.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Markdown Editor" icon="code">
+    Switch to Markdown mode for advanced formatting.
+
+    <CodeGroup tabs="MDX,Markdown">
+````mdx
+---
+title: Introduction
+description: Welcome to my docs
+---
+
+## Hello World
+
+This is your first document!
+````
+````markdown
+# Hello World
+
+This is your first document!
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Konstantinos K supports full MDX syntax including components like `<Callout>` and `<Steps>`. Escape special characters like `{variable}` with backticks in prose.
+</Callout>
+
+## Navigate the Dashboard
+
+Familiarize yourself with key areas:
+
+<Columns cols={2}>
+  <Card title="Spaces Overview" icon="grid" href="/spaces">
+    View all your documentation spaces and recent activity.
+  </Card>
+  <Card title="Search & Analytics" icon="search" href="/analytics">
+    Search documents and track views/engagement.
+  </Card>
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Connect GitHub, Slack, or custom webhooks.
+  </Card>
+  <Card title="Settings" icon="settings" href="/settings">
+    Manage billing, users, and API keys.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Expandable title="Common Troubleshooting" default-open="false">
+
+- **Email not received?** Check spam folder or resend from account settings.
+- **Editor not saving?** Ensure browser extensions aren't blocking requests.
+- **Need help?** Visit our [community forum](https://docs.example.com/support).
+
+</Expandable>
+
+Explore advanced features:
+
+<Columns cols={2}>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your spaces with API keys and OAuth.
+  </Card>
+  <Card title="Customization" icon="palette" href="/configuration">
+    Configure themes and custom domains.
+  </Card>
+</Columns>
+
+You're now ready to build your documentation! Customize this starter content to fit your project.
